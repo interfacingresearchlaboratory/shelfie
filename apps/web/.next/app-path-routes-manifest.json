@@ -1,0 +1,12 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/api/books/[id]/editions/route": "/api/books/[id]/editions",
+  "/api/books/route": "/api/books",
+  "/api/bookshelves/[id]/route": "/api/bookshelves/[id]",
+  "/api/bookshelves/route": "/api/bookshelves",
+  "/api/users/[id]/route": "/api/users/[id]",
+  "/api/users/route": "/api/users",
+  "/favicon.ico/route": "/favicon.ico",
+  "/books/page": "/books",
+  "/page": "/"
+}
