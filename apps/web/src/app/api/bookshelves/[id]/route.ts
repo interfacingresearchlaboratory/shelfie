@@ -3,14 +3,17 @@ import { getBookshelfById } from '@shelfie/db';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const bookshelf = await getBookshelfById(id);
     
     if (!bookshelf) {
-      return NextResponse.json({ error: 'Bookshelf not found' }, { status: 404 });
+      return NextResponse.json(
+        { error: 'Bookshelf not found' },
+        { status: 404 }
+      );
     }
     
     return NextResponse.json(bookshelf);
