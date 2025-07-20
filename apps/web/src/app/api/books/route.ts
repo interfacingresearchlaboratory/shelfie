@@ -3,9 +3,9 @@ import { createBook, getBookById, searchBooks, createEdition, getEditionsByBookI
 
 export async function GET(request: NextRequest) {
   try {
-    const { searchParams } = new URL(request.url);
-    const query = searchParams.get('q');
-    const id = searchParams.get('id');
+    const url = new URL(request.url);
+    const query = url.searchParams.get('q');
+    const id = url.searchParams.get('id');
 
     if (id) {
       // Get book by ID
